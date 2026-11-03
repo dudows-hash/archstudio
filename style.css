@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: grid;
+    grid-template-columns: 260px 1fr 300px;
+    height: 100vh;
+}
+
+.sidebar, .properties-panel {
+    background-color: #1e293b;
+    padding: 20px;
+    border-right: 1px solid #334155;
+}
+
+.properties-panel {
+    border-left: 1px solid #334155;
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h2 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #38bdf8;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #0284c7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #0369a1;
+}
+
+.workspace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0b0f19;
+}
+
+.canvas-preview {
+    width: 600px;
+    height: 400px;
+    background-color: #ffffff;
+    color: #000000;
+    position: relative;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Elementos do Canvas */
+.elemento-canvas {
+    position: absolute;
+    cursor: move;
+    user-select: none;
+}
+
+.elemento-canvas.selecionado {
+    outline: 2px dashed #0284c7;
+    outline-offset: 2px;
+}
+
+.handle-redimensionar {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #0284c7;
+    border: 1px solid #ffffff;
+    right: -5px;
+    bottom: -5px;
+    cursor: se-resize;
+    display: none;
+}
+
+.elemento-canvas.selecionado .handle-redimensionar {
+    display: block;
+}
+
+/* Controles do Inspetor */
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.control-group label {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.control-group input, .control-group select {
+    padding: 8px;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    color: #f8fafc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.control-group input[type="color"] {
+    width: 100%;
+    height: 38px;
+    cursor: pointer;
+    padding: 2px;
+}

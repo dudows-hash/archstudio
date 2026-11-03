@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor Web - Produto Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Biblioteca html2canvas para exportação de imagens -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Barra Lateral de Ferramentas -->
+        <aside class="sidebar">
+            <h2>Ferramentas</h2>
+            <button onclick="adicionarTexto()">Adicionar Texto</button>
+            <button onclick="adicionarRetangulo()">Adicionar Forma</button>
+            <button onclick="exportarArte()">Exportar Imagem (PNG)</button>
+        </aside>
+
+        <!-- Área Central de Edição (Canvas) -->
+        <main class="workspace">
+            <div id="canvas-preview" class="canvas-preview">
+                <!-- Elementos inseridos dinamicamente -->
+            </div>
+        </main>
+
+        <!-- Painel de Propriedades -->
+        <aside class="properties-panel">
+            <h2>Propriedades</h2>
+            <div id="inspector">Selecione um elemento</div>
+        </aside>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
